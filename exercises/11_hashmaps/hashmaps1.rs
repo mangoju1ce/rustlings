@@ -10,16 +10,24 @@ fn fruit_basket() -> HashMap<String, u32> {
     // TODO: Declare the hash map.
     // let mut basket =
 
+    let mut basket = HashMap::new();
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
+    basket.insert(String::from("mango"), 3);
+    basket.insert(String::from("apple"), 6);
+    basket
 
     // TODO: Put more fruits in your basket.
 
-    basket
 }
 
 fn main() {
     // You can optionally experiment here.
+    let mut num = Vec::new(); 
+    let fruit = fruit_basket(); 
+    num.push(fruit.get("mango").or(Some(&0)).unwrap());
+    num.push(fruit.get("apple").or(Some(&0)).unwrap());
+    println!("{num:?}");
 }
 
 #[cfg(test)]
